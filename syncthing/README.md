@@ -18,4 +18,6 @@ When creating a new folder with the webui, you must set the folder path to somet
  ## Configuration
  There are no configuration options.
 
+ <hr>
+
  _This addon is based on work done by bestlibre._
