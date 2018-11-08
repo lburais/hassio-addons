@@ -15,5 +15,7 @@ When creating a new folder with the webui, you must set the folder path to somet
  - `/backup` : to synchronize home assistant backups,
  - `/addons` :  to synchronize hassio addons.
 
-## Configuration
-There are no configuration options.
+ ## Configuration
+ There are no configuration options.
+
+ _This addon is based on work done by bestlibre._
