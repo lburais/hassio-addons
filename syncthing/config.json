@@ -1,0 +1,15 @@
+{
+    "name": "Syncthing",
+    "version": "0.14.48",
+    "slug": "syncthing",
+    "description": "syncthing synchronization service",
+    "url": "https://github.com/lburais/hassio-addons/tree/master/syncthing",
+    "startup": "system",
+    "boot": "auto",
+    "image": "lburais/{arch}-syncthing",
+    "options": {},
+    "schema": {},
+    "ports": {"8384/tcp": 8384, "22000/tcp": null},
+    "map": ["share:rw", "config:rw", "backup:rw", "addons:rw"],
+    "webui": "http://[HOST]:[PORT:8384]"
+}
