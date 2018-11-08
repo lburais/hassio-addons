@@ -5,7 +5,7 @@
 
 This addon provide a [syncthing](https://syncthing.net/) container for hass.io.
 
-> Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
+> Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralised. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
 
 When creating a new folder with the webui, you must set the folder path to something that will be persistent in case of container reboot/upgrade. You can use any of the following path :
 
