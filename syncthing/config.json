@@ -9,7 +9,7 @@
     "image": "lburais/{arch}-syncthing",
     "options": {},
     "schema": {},
-    "ports": {"8384/tcp": 8384, "22000/tcp": null},
-    "map": ["share:rw", "config:rw", "backup:rw", "addons:rw"],
+    "ports": {"8384/tcp": 8384, "22000/tcp": 22000, "21027/udp": null},
+    "map": ["share:rw", "config:rw", "backup:rw", "addons:rw", "ssl:rw"],
     "webui": "http://[HOST]:[PORT:8384]"
 }

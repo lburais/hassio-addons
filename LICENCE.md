@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018 Nicolai Bjerre Pedersen <mr.bjerre@gmail.com>
+Copyright (c) 2018 Laurent Burais <laurent@burais.fr>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
