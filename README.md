@@ -1,5 +1,5 @@
 
-[![GitHub license](https://img.shields.io/github/license/lburais/hassio-addons.svg)(LICENCE.md)]
+[![GitHub license](https://img.shields.io/github/license/lburais/hassio-addons.svg)](LICENCE.md)
 
 > My collection of add-ons for Hass.io.
 
