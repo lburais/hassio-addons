@@ -32,3 +32,9 @@ https://github.com/lburais/hassio-addons
 
 - [Syncthing](https://github.com/lburais/hassio-addons/tree/master/syncthing) [![](https://images.microbadger.com/badges/version/lburais/armhf-syncthing.svg)](https://microbadger.com/images/lburais/armhf-syncthing "Get your own version badge on microbadger.com")
 Syncthing synchronization service : working.
+
+- [UniFi](https://github.com/lburais/hassio-addons/tree/master/unifi) [![](https://images.microbadger.com/badges/version/lburais/armhf-unifi.svg)](https://microbadger.com/images/lburais/armhf-unifi "Get your own version badge on microbadger.com")
+UniFi : work in progress.
+
+- [LetsEncrypt](https://github.com/lburais/hassio-addons/tree/master/letsencrypt) [![](https://images.microbadger.com/badges/version/lburais/armhf-letsencrypt.svg)](https://microbadger.com/images/lburais/armhf-letsencrypt "Get your own version badge on microbadger.com")
+Let's Encrypt : work in progress.
