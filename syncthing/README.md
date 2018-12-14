@@ -1,5 +1,5 @@
 # Syncthing for hass.io
-[![Build Status](https://travis-ci.org/lburais/hassio-addons.svg?branch=master)](https://travis-ci.org/lburais/hassio-addons)[![](https://images.microbadger.com/badges/version/lburais/armhf-syncthing.svg)](https://microbadger.com/images/lburais/armhf-syncthing "Get your own version badge on microbadger.com")
+[![Build Status](https://travis-ci.org/lburais/hassio-addons.svg?branch=master)](https://travis-ci.org/lburais/hassio-addons)[![](https://images.microbadger.com/badges/version/lburais/i386-syncthing.svg)](https://microbadger.com/images/lburais/armhf-syncthing "Get your own version badge on microbadger.com")
 
 ## Description
 

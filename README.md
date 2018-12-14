@@ -30,5 +30,5 @@ https://github.com/lburais/hassio-addons
 
 ## <a name='addons'></a>List of add-ons
 
-- [Syncthing](https://github.com/lburais/hassio-addons/tree/master/syncthing) [![](https://images.microbadger.com/badges/version/lburais/armhf-syncthing.svg)](https://microbadger.com/images/lburais/armhf-syncthing "Get your own version badge on microbadger.com")
+- [Syncthing](https://github.com/lburais/hassio-addons/tree/master/syncthing) [![](https://images.microbadger.com/badges/version/lburais/i386-syncthing.svg)](https://microbadger.com/images/lburais/i386-syncthing "Get your own version badge on microbadger.com")
 Syncthing synchronization service : working.
