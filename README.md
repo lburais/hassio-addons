@@ -25,7 +25,7 @@ Hass.io allows anyone to create add-on repositories to share their add-ons for H
 
 Adding these add-ons to your Hass.io Home Assistant instance is straightforward. Follow [the official instructions][third-party-addons] on the website of Home Assistant, and use the following URL:
 ```txt
-https://github.com/lburais/hassio-addons
+https://github.com/lburais/hassio-addons-burais
 ```
 
 ## <a name='addons'></a>List of add-ons
