@@ -6,11 +6,12 @@
     "url": "https://github.com/lburais/hassio-addons/tree/master/syncthing",
     "startup": "system",
     "boot": "auto",
-    "image": "lburais/{arch}-syncthing",
-    "options": {},
-    "schema": {},
+    "host_network": true,
     "ports": {"8384/tcp": 8384, "22000/tcp": 22000, "21027/udp": null},
     "map": ["share:rw", "config:rw", "backup:rw", "addons:rw", "ssl:rw"],
     "webui": "http://[HOST]:[PORT:8384]",
-    "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"]
+    "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
+    "options": {},
+    "schema": {},
+    "image": "lburais/{arch}-syncthing"
 }

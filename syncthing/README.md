@@ -1,5 +1,8 @@
 # Syncthing for hass.io
-[![Build Status](https://travis-ci.org/lburais/hassio-addons.svg?branch=master)](https://travis-ci.org/lburais/hassio-addons)[![](https://images.microbadger.com/badges/version/lburais/i386-syncthing.svg)](https://microbadger.com/images/lburais/armhf-syncthing "Get your own version badge on microbadger.com")
+
+Share your configuration using syncthing network file sharing.
+
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
 ## Description
 

@@ -1,11 +1,13 @@
 
-[![GitHub license](https://img.shields.io/github/license/lburais/hassio-addons.svg)](LICENCE.md)
+[![GitHub license](https://img.shields.io/github/license/lburais/hassio-addons.svg)](LICENSE)
 
 > My collection of add-ons for Hass.io.
 
 <hr>
 
 # hassio-addons
+[![Build Status](https://dev.azure.com/home-assistant/Hass.io/_apis/build/status/addons-development?branchName=master)](https://dev.azure.com/home-assistant/Hass.io/_build/latest?definitionId=8&branchName=master)
+
 [![Build Status](https://travis-ci.org/lburais/hassio-addons.svg?branch=master)](https://travis-ci.org/lburais/hassio-addons)
 
 Repository for hass.io addons.
