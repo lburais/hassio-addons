@@ -1,4 +1,6 @@
 
+# My Hass.IO Add Ons
+
 [![GitHub license](https://img.shields.io/github/license/lburais/hassio-addons.svg)](LICENSE)
 
 My collection of add-ons for Hass.io.
@@ -12,7 +14,6 @@ My collection of add-ons for Hass.io.
 ## <a name='about'></a>About
 
 Hass.io allows anyone to create add-on repositories to share their add-ons for Hass.io easily. So why not share my personal add-ons that I've found useful myself.
-
 
 ## <a name='built'></a>Built
 
