@@ -1,5 +1,7 @@
 # Syncthing for hass.io
 
+[syncthing-shield]
+
 Share your configuration using syncthing network file sharing.
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
@@ -31,3 +33,4 @@ When creating a new folder with the webui, you must set the folder path to somet
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[syncthing-shield]: https://img.shields.io/badge/syncthing-${SYNCTHING_VERSION}-lightgrey.svg
