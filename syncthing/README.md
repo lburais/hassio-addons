@@ -25,3 +25,9 @@ When creating a new folder with the webui, you must set the folder path to somet
  <hr>
 
  _This addon is based on work done by [bestlibre](https://github.com/bestlibre/hassio-addons/tree/master/syncthing)._
+
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
