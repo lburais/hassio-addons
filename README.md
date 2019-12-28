@@ -17,7 +17,7 @@ Hass.io allows anyone to create add-on repositories to share their add-ons for H
 
 ## <a name='built'></a>Built
 
-[![Build Status](https://dev.azure.com/lburais/hassio-addons/_apis/build/status/hassio-addons?branchName=master)](https://dev.azure.com/lburais/hassio-addons/_apis/build/status/hassio-addons?branchName=master)
+[![Build Status](https://dev.azure.com/lburais/hassio-addons/_build)](https://dev.azure.com/lburais/hassio-addons/_build)
 
 ## <a name='installation'></a>Installation
 
