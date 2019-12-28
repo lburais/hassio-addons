@@ -1,6 +1,6 @@
 # Syncthing for hass.io
 
-[syncthing-shield]
+![sSyncthing version][syncthing-shield]
 
 Share your configuration using syncthing network file sharing.
 
