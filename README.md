@@ -43,11 +43,11 @@ Unifi controller
 [:books: Unifi documentation][unifi-doc]
 
 
-[syncthing-addon]: https://github.com/lburais/hassio-addons/syncthing
+[syncthing-addon]: https://github.com/lburais/hassio-addons/tree/master/syncthing
 [syncthing-doc]: https://syncthing.net
 [syncthing-version-shield]: https://img.shields.io/badge/syncthing-v1.3.2-blue.svg
 
-[unifi-addon]: https://github.com/lburais/hassio-addons/unifi
+[unifi-addon]: https://github.com/lburais/hassio-addons/tree/master/unifi
 [unifi-doc]: https://unifi-network.ui.com
 [unifi-version-shield]: https://img.shields.io/badge/unifi-v5.6.42-blue.svg
 
