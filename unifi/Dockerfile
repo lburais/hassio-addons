@@ -7,6 +7,9 @@ ARG BUILD_ARCH
 # Add env
 ENV LANG C.UTF-8
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # Setup base system
 RUN apt-get install -y --no-install-recommends \
         binutils=2.30-21ubuntu1~18.04.2 \
