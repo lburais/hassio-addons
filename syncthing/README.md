@@ -19,7 +19,18 @@ When creating a new folder with the webui, you must set the folder path to somet
  - `/addons` :  to synchronize hassio addons,
  - `/ssl   ` :  to synchronize home assistant backups.
 
- ## Configuration
+ ## Installation
+
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
+
+1. Add repository `https://github.com/lburais/hassio-addons` to your Hass.io instance.
+1. Install the "UniFi Controller" add-on.
+1. Start the "UniFi Controller" add-on.
+1. Check the logs of the "UniFi Controller" to see if everything went well.
+1. Click the "OPEN WEB UI" button, and follow the initial wizard.
+
+## Configuration
  There are no configuration options.
 
  <hr>
