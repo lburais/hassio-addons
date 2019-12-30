@@ -5,6 +5,6 @@
         "amd64": "homeassistant/amd64-base-ubuntu",
         "armv7": "homeassistant/armv7-base-ubuntu",
         "i386": "homeassistant/i386-base-ubuntu",
-    }
+    },
     "args": {}
 }
