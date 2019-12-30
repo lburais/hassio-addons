@@ -13,5 +13,5 @@
     "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
     "options": {},
     "schema": {},
-    "image": "syncthing/syncthing"
+    "image": "linuxserver/syncthing"
 }
