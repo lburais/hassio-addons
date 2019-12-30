@@ -1,28 +1,32 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM golang:1.13 AS builder
 
-ARG BUILD_VERSION
-ARG BUILD_ARCH
+WORKDIR /src
+COPY . .
 
-# Add env
-ENV LANG C.UTF-8
+ENV CGO_ENABLED=0
+ENV BUILD_HOST=syncthing.net
+ENV BUILD_USER=docker
+RUN rm -f syncthing && go run build.go -no-upgrade build syncthing
 
-# Setup base
+FROM alpine
 
-RUN apk add --no-cache -U --virtual .build-deps curl tar && \
-    SYNCTHING_VERSION=v${BUILD_VERSION%-*} && \
-    if [ ${BUILD_ARCH} == "armhf" ]; then syncthingarch=arm; \
-        elif [ ${BUILD_ARCH} == "armv7" ]; then syncthingarch=arm; \ 
-        elif [ ${BUILD_ARCH} == "amd64" ]; then syncthingarch=amd64; \ 
-        elif [ ${BUILD_ARCH} == "i386" ]; then syncthingarch=386; \
-        elif [ ${BUILD_ARCH} == "aarch64" ]; then syncthingarch=arm64; \
-    fi && \
-    syncthingurl=https://github.com/syncthing/syncthing/releases/download/${SYNCTHING_VERSION}/syncthing-linux-${syncthingarch}-${SYNCTHING_VERSION}.tar.gz && \
-    curl --silent --show-error --fail --location --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" --output - "$syncthingurl" \
-        | tar --no-same-owner -C /usr/local/bin/ -xz --strip-components 1 syncthing-linux-${syncthingarch}-${SYNCTHING_VERSION}/syncthing && \
-    chmod 0755 /usr/local/bin/syncthing && \
-    apk del .build-deps
- 
+EXPOSE 8384 22000 21027/udp
+
+VOLUME ["/var/syncthing"]
+
+RUN apk add --no-cache ca-certificates su-exec
+
+COPY --from=builder /src/syncthing /bin/syncthing
+COPY --from=builder /src/script/docker-entrypoint.sh /bin/entrypoint.sh
+
+ENV PUID=1000 PGID=1000 HOME=/var/syncthing
+
+HEALTHCHECK --interval=1m --timeout=10s \
+  CMD nc -z localhost 8384 || exit 1
+
+ENV STGUIADDRESS=0.0.0.0:8384
+#ENTRYPOINT ["/bin/entrypoint.sh", "/bin/syncthing", "-home", "/var/syncthing/config"]
+
 # Copy data
 COPY data/run.sh /
 RUN chmod a+x /run.sh
