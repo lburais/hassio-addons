@@ -12,5 +12,5 @@
     "webui": "http://[HOST]:[PORT:8384]",
     "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
     "options": {},
-    "schema": {},
+    "schema": {}
 }
