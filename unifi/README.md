@@ -166,6 +166,7 @@ you can manually adopt a device by following these steps:
 
 # <hr>
 
- _This addon is based on work done by [Hass.IO Add-Ons community](https://github.com/hassio-addons/addon-unifi/tree/v0.13.3)._
+ _This addon is based on work done by [Hass.IO Add-Ons community][unifi-addons]._
 
 [unifi-shield]: https://img.shields.io/badge/unifi-5.6.42-blue.svg
+[unifi-addons]: https://github.com/hassio-addons/addon-unifi/tree/v0.13.3
