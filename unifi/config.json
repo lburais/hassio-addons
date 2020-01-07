@@ -5,6 +5,7 @@
   "description": "Manage your UniFi network using a web browser",
   "url": "https://github.com/lburais/hassio-addons/tree/master/unifi",
   "webui": "https://[HOST]:[PORT:8443]",
+  "host_network": true,
   "startup": "services",
   "arch": [ "aarch64" ],
   "map": [ "backup:rw", "ssl" ],

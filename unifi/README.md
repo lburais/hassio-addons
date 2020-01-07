@@ -115,55 +115,6 @@ but has been adjusted to put the created backups in a different location.
 Backups are created in `/backup/unifi`. You can access this folder using
 the normal Hass.io methods (e.g., using Samba, Terminal, SSH).
 
-## Migrating from an existing controller
-
-If you want to migrate from an existing controller to the controller provided
-by this addon, Ubiquiti has an exellent tutorial on this:
-
-<https://help.ubnt.com/hc/en-us/articles/115002869188>
-
-This article explains in detail how to use the UniFi Site Export Wizard
-to quickly and easily export sites from one Controller
-(including configuration and devices) to another (e.g., this add-on).
-
-## Manually adopting a device
-
-Alternatively to setting up a custom inform address (installation steps 7-9)
-you can manually adopt a device by following these steps:
-
-- SSH into the device using `ubnt` as username and `ubnt` as password
-- `$ mca-cli`
-- `$ set-inform http://<IP of Hassio>:<controller port (default:8080)>/inform`
-  - for example `$ set-inform http://192.168.1.14:8080/inform`
-
-## Known issues and limitations
-
-- The AP seems stuck in "adopting" state: Please read the installation
-  instructions carefully. You need to change some controller settings
-  in order for this add-on to work properly. Using the Ubiquiti Discovery
-  Tool, or SSH'ing into the AP and setting the INFORM after adopting
-  will resolve this. (see: *Manually adopting a device*)
-- This add-on does support ARM-based devices, nevertheless, they must
-  at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
-- When using SSL, the following warning is shown in the add-on logs:
-  `Warning: The JKS keystore uses a proprietary format.`. This warning can
-  be safely ignored. There is nothing wrong and your add-on will function
-  normally.
-- The following error can show up in the log, but can be safely ignored:
-  `INFO: I/O exception (java.net.ConnectException) caught when
-  processing request: Connection refused (Connection refused)`.
-  This is a known issue, however, the add-on functions normally.
-- Due limitation, renewed SSL certificates are not picked up automatically.
-  You'd have to restart the add-on in order for UniFi to pick up the change.
-- Due to security policies in the UniFi Controller software, it is currently
-  impossible to add the UniFI web interface to your Home Assistant frontend
-  using a `panel_iframe`.
-- The broadcast feature of the EDU type APs are currently not working with
-  this add-on. Due to a limitation in Hass.io, is it currently impossible
-  to open the required "range" of ports needed for this feature to work.
-- This add-on cannot support Ingress due to technical limitations of the
-  UniFi software.
-
 # <hr>
 
  _This addon is based on work done by [Hass.IO Add-Ons community][unifi-addons]._
