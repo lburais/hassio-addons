@@ -1,0 +1,46 @@
+#!/usr/bin/with-contenv bash
+
+set -euo pipefail
+
+CONFIG_PATH=/data/options.json
+ENV_DIR=/var/run/s6/container_environment
+
+mkdir -p "$ENV_DIR"
+
+python3 - <<'PY' > /tmp/cwa-addon-env
+import json
+from pathlib import Path
+
+config_path = Path('/data/options.json')
+options = {}
+if config_path.exists():
+    options = json.loads(config_path.read_text())
+
+defaults = {
+    'TZ': 'UTC',
+    'PUID': '0',
+    'PGID': '0',
+    'NETWORK_SHARE_MODE': 'false',
+    'HARDCOVER_TOKEN': '',
+    'TRUSTED_PROXY_COUNT': '1',
+    'DISABLE_LIBRARY_AUTOMOUNT': 'false',
+    'CWA_PORT_OVERRIDE': '8083',
+}
+
+for key, default in defaults.items():
+    value = options.get(key, default)
+    if isinstance(value, bool):
+        value = 'true' if value else 'false'
+    else:
+        value = str(value)
+    print(f'{key}={value}')
+PY
+
+while IFS='=' read -r key value; do
+    printf '%s' "$value" > "$ENV_DIR/$key"
+    export "$key=$value"
+done < /tmp/cwa-addon-env
+
+rm -f /tmp/cwa-addon-env
+
+echo "[cont-init.d] Applied Home Assistant options for Calibre-Web Automated"

@@ -1,0 +1,61 @@
+{
+    "apparmor": true,
+    "arch": [
+      "aarch64",
+      "amd64"
+    ],
+    "boot": "auto",
+    "description": "Calibre-Web Automated ebook library manager",
+    "host_network": false,
+    "init": false,
+    "map": [
+      {
+        "type": "addon_config",
+        "read_only": false,
+        "path": "/config"
+      },
+      {
+        "type": "share",
+        "read_only": false,
+        "path": "/cwa-book-ingest"
+      },
+      {
+        "type": "media",
+        "read_only": false,
+        "path": "/calibre-library"
+      }
+    ],
+    "name": "Calibre-Web Automated",
+    "options": {
+      "TZ": "UTC",
+      "PUID": 0,
+      "PGID": 0,
+      "NETWORK_SHARE_MODE": false,
+      "HARDCOVER_TOKEN": "",
+      "TRUSTED_PROXY_COUNT": 1,
+      "DISABLE_LIBRARY_AUTOMOUNT": false
+    },
+    "panel_icon": "mdi:bookshelf",
+    "ports": {
+      "8083/tcp": 8083
+    },
+    "ports_description": {
+      "8083/tcp": "Web interface"
+    },
+    "schema": {
+      "TZ": "str?",
+      "PUID": "int?",
+      "PGID": "int?",
+      "NETWORK_SHARE_MODE": "bool",
+      "HARDCOVER_TOKEN": "password?",
+      "TRUSTED_PROXY_COUNT": "int(1,10)?",
+      "DISABLE_LIBRARY_AUTOMOUNT": "bool"
+    },
+    "slug": "calibre-web-automated",
+    "stage": "experimental",
+    "startup": "application",
+    "url": "https://github.com/lburais/hassio-addons/tree/master/calibre-web-automated",
+    "version": "1.0.0",
+    "watchdog": "tcp://[HOST]:[PORT:8083]",
+    "webui": "http://[HOST]:[PORT:8083]"
+  }

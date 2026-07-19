@@ -1,0 +1,65 @@
+# Home assistant add-on: Calibre-Web Automated
+
+![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flburais%2Fhassio-addons%2Fmaster%2Fcalibre-web-automated%2Fconfig.json)
+![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Flburais%2Fhassio-addons%2Fmaster%2Fcalibre-web-automated%2Fconfig.json)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/52df50fedb4949569495edeb2ea58827)](https://app.codacy.com/gh/lburais/hassio-addons/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+## About
+
+---
+
+[Calibre-Web Automated](https://github.com/crocodilestick/Calibre-Web-Automated) is a Calibre-Web based ebook library manager with ingest, conversion, metadata, and automation features.
+
+This add-on wraps the official `crocodilestick/calibre-web-automated:latest` image and maps Home Assistant storage into the paths the container expects.
+
+## Storage layout
+
+The add-on mounts three writable paths:
+
+- `/config`: add-on configuration and Calibre-Web Automated application data
+- `/cwa-book-ingest`: import folder watched for new books
+- `/calibre-library`: Calibre library root containing `metadata.db`
+
+In Home Assistant these paths map to:
+
+- `/config` from the add-on config storage
+- `/cwa-book-ingest` from the Home Assistant `share` folder
+- `/calibre-library` from the Home Assistant `media` folder
+
+Anything dropped into `/cwa-book-ingest` is processed and removed by Calibre-Web Automated after import.
+
+## Installation
+
+The installation of this add-on is straightforward and not different in
+comparison to installing any other Hass.io add-on.
+
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on.
+1. Adjust the options if needed.
+1. Start the add-on.
+1. Open the web UI on port `8083`.
+1. Log in with the upstream default credentials `admin` / `admin123` and change them.
+
+## Configuration
+
+```yaml
+TZ: UTC
+PUID: 0
+PGID: 0
+NETWORK_SHARE_MODE: false
+HARDCOVER_TOKEN: ""
+TRUSTED_PROXY_COUNT: 1
+DISABLE_LIBRARY_AUTOMOUNT: false
+```
+
+Notes:
+
+- Set `NETWORK_SHARE_MODE` to `true` if your library is on SMB or NFS storage.
+- `TRUSTED_PROXY_COUNT` is useful when you run the add-on behind multiple reverse proxies.
+- If you use Calibre plugins, place them under `/config/.config/calibre/plugins` inside the add-on config storage and also copy `customize.py.json` into `/config/.config/calibre/`.
+
+## Support
+
+Create an issue on the [repository github][repository]
+
+[repository]: https://github.com/lburais/hassio-addons
