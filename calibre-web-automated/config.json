@@ -18,6 +18,7 @@
       "DISABLE_LIBRARY_AUTOMOUNT": false
     },
     "host_network": false,
+    "homeassistant_api": true,
     "init": false,
     "map": [
       {
@@ -35,7 +36,7 @@
         "read_only": false,
         "path": "/media"
       }
-    ],
+    ], 
     "name": "Calibre-Web Automated",
     "options": {
       "TZ": "Europe/Paris",
