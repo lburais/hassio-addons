@@ -10,21 +10,21 @@
       "TZ": "Europe/Paris",
       "PUID": "501",
       "PGID": "20",
-      "CONFIG_PATH": "/addon-config",
+      "CONFIG_PATH": "/app-config",
       "INGEST_PATH": "/share/Ra/Médias/Import",
       "LIBRARY_PATH": "/share/Ra/Médias/Livres",
-      "NETWORK_SHARE_MODE": 0,
-      "TRUSTED_PROXY_COUNT": 1,
-      "DISABLE_LIBRARY_AUTOMOUNT": 0
+      "NETWORK_SHARE_MODE": "0",
+      "TRUSTED_PROXY_COUNT": "1",
+      "DISABLE_LIBRARY_AUTOMOUNT": "0"
     },
     "host_network": false,
     "homeassistant_api": true,
     "init": false,
     "map": [
       {
-        "type": "addon_config",
+        "type": "app_config",
         "read_only": false,
-        "path": "/addon-config"
+        "path": "/app-config"
       },
       {
         "type": "share",
@@ -42,7 +42,7 @@
       "TZ": "Europe/Paris",
       "PUID": 501,
       "PGID": 20,
-      "CONFIG_PATH": "/addon-config",
+      "CONFIG_PATH": "/app-config",
       "INGEST_PATH": "/share/Ra/Médias/Import",
       "LIBRARY_PATH": "/share/Ra/Médias/Livres",
       "NETWORK_SHARE_MODE": false,
