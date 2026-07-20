@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+- Claude support for docker compose.
+
 ## 1.0.3
 
 - Fixing folders.
