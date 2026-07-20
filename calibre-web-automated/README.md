@@ -22,9 +22,15 @@ The add-on mounts three writable paths:
 
 In Home Assistant these paths map to:
 
-- `/config` from the add-on config storage
-- `/cwa-book-ingest` from the Home Assistant `share` folder
-- `/calibre-library` from the Home Assistant `media` folder
+- `/addon-config` from the add-on config storage
+- `/share` from the Home Assistant `share` folder
+- `/media` from the Home Assistant `media` folder
+
+The effective CWA paths are controlled by options and linked at startup:
+
+- `/config` -> `CONFIG_PATH`
+- `/cwa-book-ingest` -> `INGEST_PATH`
+- `/calibre-library` -> `LIBRARY_PATH`
 
 Anything dropped into `/cwa-book-ingest` is processed and removed by Calibre-Web Automated after import.
 
@@ -46,6 +52,9 @@ comparison to installing any other Hass.io add-on.
 TZ: UTC
 PUID: 0
 PGID: 0
+CONFIG_PATH: /addon-config
+INGEST_PATH: /share/calibre-web-automated/ingest
+LIBRARY_PATH: /media/calibre-web-automated/library
 NETWORK_SHARE_MODE: false
 HARDCOVER_TOKEN: ""
 TRUSTED_PROXY_COUNT: 1
@@ -56,6 +65,8 @@ Notes:
 
 - Set `NETWORK_SHARE_MODE` to `true` if your library is on SMB or NFS storage.
 - `TRUSTED_PROXY_COUNT` is useful when you run the add-on behind multiple reverse proxies.
+- `CONFIG_PATH` can be under `/addon-config`, `/share`, or `/media`.
+- `INGEST_PATH` and `LIBRARY_PATH` can be set to directories under `/share` or `/media`.
 - If you use Calibre plugins, place them under `/config/.config/calibre/plugins` inside the add-on config storage and also copy `customize.py.json` into `/config/.config/calibre/`.
 
 ## Support

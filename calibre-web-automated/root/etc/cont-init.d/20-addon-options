@@ -20,6 +20,9 @@ defaults = {
     'TZ': 'UTC',
     'PUID': '0',
     'PGID': '0',
+    'CONFIG_PATH': '/addon-config',
+    'INGEST_PATH': '/share/calibre-web-automated/ingest',
+    'LIBRARY_PATH': '/media/calibre-web-automated/library',
     'NETWORK_SHARE_MODE': 'false',
     'HARDCOVER_TOKEN': '',
     'TRUSTED_PROXY_COUNT': '1',
@@ -42,5 +45,40 @@ while IFS='=' read -r key value; do
 done < /tmp/cwa-addon-env
 
 rm -f /tmp/cwa-addon-env
+
+CONFIG_PATH="${CONFIG_PATH:-/addon-config}"
+INGEST_PATH="${INGEST_PATH:-/share/calibre-web-automated/ingest}"
+LIBRARY_PATH="${LIBRARY_PATH:-/media/calibre-web-automated/library}"
+
+case "$CONFIG_PATH" in
+    /addon-config|/addon-config/*|/share|/share/*|/media|/media/*) ;;
+    *)
+        echo "[cont-init.d] Invalid CONFIG_PATH '$CONFIG_PATH'. Falling back to /addon-config"
+        CONFIG_PATH="/addon-config"
+        ;;
+esac
+
+case "$INGEST_PATH" in
+    /share|/share/*|/media|/media/*) ;;
+    *)
+        echo "[cont-init.d] Invalid INGEST_PATH '$INGEST_PATH'. Falling back to /share/calibre-web-automated/ingest"
+        INGEST_PATH="/share/calibre-web-automated/ingest"
+        ;;
+esac
+
+case "$LIBRARY_PATH" in
+    /media|/media/*|/share|/share/*) ;;
+    *)
+        echo "[cont-init.d] Invalid LIBRARY_PATH '$LIBRARY_PATH'. Falling back to /media/calibre-web-automated/library"
+        LIBRARY_PATH="/media/calibre-web-automated/library"
+        ;;
+esac
+
+mkdir -p "$CONFIG_PATH" "$INGEST_PATH" "$LIBRARY_PATH"
+
+rm -rf /config /cwa-book-ingest /calibre-library
+ln -s "$CONFIG_PATH" /config
+ln -s "$INGEST_PATH" /cwa-book-ingest
+ln -s "$LIBRARY_PATH" /calibre-library
 
 echo "[cont-init.d] Applied Home Assistant options for Calibre-Web Automated"
