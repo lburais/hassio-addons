@@ -32,6 +32,8 @@ The effective CWA paths are controlled by options and linked at startup:
 - `/cwa-book-ingest` -> `INGEST_PATH`
 - `/calibre-library` -> `LIBRARY_PATH`
 
+The add-on startup script also exports `TZ`, `PUID`, `PGID`, and the CWA path options before launching the app process.
+
 Anything dropped into `/cwa-book-ingest` is processed and removed by Calibre-Web Automated after import.
 
 ## Installation
