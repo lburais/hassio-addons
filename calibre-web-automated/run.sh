@@ -21,4 +21,4 @@ ln -sfn $LIBRARY_PATH /calibre-library
 ln -sfn $CONFIG_PATH  /config   # HA's /config volume already mounted here via `map`
 
 # Hand off to the original image's startup (check their Dockerfile/entrypoint for the exact binary/path)
-exec /etc/s6-overlay/s6-rc.d/init-adduser/run
+exec /etc/s6-overlay/s6-rc.d/cwa-init/run
