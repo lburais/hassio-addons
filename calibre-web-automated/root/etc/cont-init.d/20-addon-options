@@ -19,7 +19,7 @@ if config_path.exists():
     options = json.loads(config_path.read_text())
 
 defaults = {
-    'TZ': 'UTC',
+    'TZ': 'Europe/Paris',
     'PUID': '0',
     'PGID': '0',
     'CONFIG_PATH': '/addon-config',

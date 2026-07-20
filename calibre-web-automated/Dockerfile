@@ -1,7 +1,7 @@
 ARG BUILD_VERSION=dev
 ARG BUILD_ARCH
 
-ARG BUILD_FROM
+#ARG BUILD_FROM
 FROM crocodilestick/calibre-web-automated:latest
 
 COPY root/ /

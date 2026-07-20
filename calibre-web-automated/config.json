@@ -15,13 +15,12 @@
   "name": "Calibre-Web Automated",
   "panel_icon": "mdi:bookshelf",
   "options": {
-    "puid": 501,
-    "pgid": 20,
-    "tz": "Europe/Paris",
-    "config": "/share/Docker/calibre-web-automated",
-    "ingest": "/share/Medias/Import",
-    "library": "/share/Medias/Livres",
-    "network_share_mode": false
+    "PUID": 501,
+    "PGID": 20,
+    "TZ": "Europe/Paris",
+    "CONFIG_PATH": "/share/Docker/calibre-web-automated",
+    "INGEST_PATH": "/share/Medias/Import",
+    "LIBRARY_PATH": "/share/Medias/Livres"
   },
   "ports": {
     "8083/tcp": 8083
@@ -30,13 +29,12 @@
     "8083/tcp": "Web interface"
   },
   "schema": {
-    "puid": "int",
-    "pgid": "int",
-    "tz": "str",
-    "config": "str",
-    "ingest": "str",
-    "library": "str",
-    "network_share_mode": "bool"
+    "PUID": "int",
+    "PGID": "int",
+    "TZ": "str",
+    "CONFIG_PATH": "str",
+    "INGEST_PATH": "str",
+    "LIBRARY_PATH": "str"
   },
   "slug": "calibre-web-automated",
   "stage": "experimental",
