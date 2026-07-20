@@ -59,7 +59,7 @@
     "stage": "experimental",
     "startup": "application",
     "url": "https://github.com/lburais/hassio-addons/tree/master/calibre-web-automated",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "watchdog": "tcp://[HOST]:[PORT:8083]",
     "webui": "http://[HOST]:[PORT:8083]"
   }

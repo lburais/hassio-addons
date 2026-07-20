@@ -49,14 +49,13 @@ comparison to installing any other Hass.io add-on.
 ## Configuration
 
 ```yaml
-TZ: UTC
-PUID: 0
-PGID: 0
+TZ: Europe/Paris
+PUID: 501
+PGID: 20
 CONFIG_PATH: /addon-config
 INGEST_PATH: /share/calibre-web-automated/ingest
 LIBRARY_PATH: /media/calibre-web-automated/library
 NETWORK_SHARE_MODE: false
-HARDCOVER_TOKEN: ""
 TRUSTED_PROXY_COUNT: 1
 DISABLE_LIBRARY_AUTOMOUNT: false
 ```
