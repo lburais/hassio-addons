@@ -12,9 +12,9 @@ LABEL \
   io.hass.type="app" \
   io.hass.arch="${BUILD_ARCH}"
 
-ENV CWA_PORT_OVERRIDE=8083
+# ENV CWA_PORT_OVERRIDE=8083
 
-EXPOSE 8083/tcp
+# EXPOSE 8083/tcp
 
 # Bring in bashio for reading HA addon options
 # COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/bin/bashio /usr/bin/bashio
