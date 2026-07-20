@@ -4,8 +4,8 @@ ARG BUILD_ARCH
 ARG BUILD_FROM
 FROM crocodilestick/calibre-web-automated:latest
 
-COPY root/ /
-RUN chmod -R +x /etc/cont-init.d
+# COPY root/ /
+# RUN chmod -R +x /etc/cont-init.d
 
 LABEL \
   io.hass.version="${BUILD_VERSION}" \
