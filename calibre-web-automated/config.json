@@ -6,6 +6,17 @@
     ],
     "boot": "auto",
     "description": "Calibre-Web Automated ebook library manager",
+    "environment": {
+      "TZ": "Europe/Paris",
+      "PUID": 501,
+      "PGID": 20,
+      "CONFIG_PATH": "/addon-config",
+      "INGEST_PATH": "/share/Ra/Médias/Import",
+      "LIBRARY_PATH": "/share/Ra/Médias/Livres",
+      "NETWORK_SHARE_MODE": false,
+      "TRUSTED_PROXY_COUNT": 1,
+      "DISABLE_LIBRARY_AUTOMOUNT": false
+    },
     "host_network": false,
     "init": false,
     "map": [
