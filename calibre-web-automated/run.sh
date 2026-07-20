@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/with-contenv bash
 
 echo "[run.sh] Applying Home Assistant options for Calibre-Web Automated"
 
