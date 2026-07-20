@@ -17,11 +17,11 @@ ENV CWA_PORT_OVERRIDE=8083
 EXPOSE 8083/tcp
 
 # Bring in bashio for reading HA addon options
-# COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/bin/bashio /usr/bin/bashio
-# COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/lib/bashio /usr/lib/bashio
+COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/bin/bashio /usr/bin/bashio
+COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/lib/bashio /usr/lib/bashio
 
-# COPY run.sh /
-# RUN chmod a+x /run.sh
+COPY run.sh /
+RUN chmod a+x /run.sh
 
-# ENTRYPOINT []
-# CMD [ "/run.sh" ]
+ENTRYPOINT []
+CMD [ "/run.sh" ]
