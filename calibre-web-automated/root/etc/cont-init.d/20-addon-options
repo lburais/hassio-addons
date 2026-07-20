@@ -38,6 +38,9 @@ for key, default in defaults.items():
     print(f'{key}={value}')
 PY
 
+echo "20-addon-options ... after python"
+cat /tmp/cwa-addon-env
+
 while IFS='=' read -r key value; do
     printf '%s' "$value" > "$ENV_DIR/$key"
     export "$key=$value"
