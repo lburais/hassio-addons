@@ -10,9 +10,9 @@
       "TZ": "Europe/Paris",
       "PUID": "501",
       "PGID": "20",
-      "CONFIG_PATH": "/share/docker/calibre-web-automated",
-      "INGEST_PATH": "/share/médias/Import",
-      "LIBRARY_PATH": "/share/médias/Livres",
+      "CONFIG_PATH": "/share/Docker/calibre-web-automated",
+      "INGEST_PATH": "/share/Medias/Import",
+      "LIBRARY_PATH": "/share/Medias/Livres",
       "NETWORK_SHARE_MODE": "0",
       "TRUSTED_PROXY_COUNT": "1",
       "DISABLE_LIBRARY_AUTOMOUNT": "0"
@@ -24,7 +24,7 @@
       {
         "type": "addon_config",
         "read_only": false,
-        "path": "/share/docker/calibre-web-automated"
+        "path": "/share/Docker/calibre-web-automated"
       },
       {
         "type": "share",
@@ -34,7 +34,7 @@
       {
         "type": "media",
         "read_only": false,
-        "path": "/share/médias"
+        "path": "/share/Medias"
       }
     ], 
     "name": "Calibre-Web Automated",
@@ -49,7 +49,7 @@
     "stage": "experimental",
     "startup": "application",
     "url": "https://github.com/lburais/hassio-addons/tree/master/calibre-web-automated",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "watchdog": "tcp://[HOST]:[PORT:8083]",
     "webui": "http://[HOST]:[PORT:8083]"
   }
