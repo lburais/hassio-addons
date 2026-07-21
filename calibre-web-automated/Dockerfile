@@ -6,7 +6,16 @@ FROM crocodilestick/calibre-web-automated:latest
 
 # --- bashio (installed from release, no base-image tag dependency) ---
 RUN apt-get update && apt-get install -y --no-install-recommends curl tar ca-certificates
-RUN rm -rf /var/lib/apt/lists/* \
+RUN rm -rf /var/lib/apt/lists/*
+RUN mkdir /tmp/bashio
+RUN curl -J -L -o /tmp/bashio.tar.gz "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.tar.gz"
+RUN tar zxf /tmp/bashio.tar.gz --strip 1 -C /tmp/bashio
+RUN mv /tmp/bashio/lib /usr/lib/bashio
+RUN ln -s /usr/lib/bashio/bashio /usr/bin/bashio
+RUN rm -rf /tmp/bashio*
+
+ RUN apt-get update && apt-get install -y --no-install-recommends curl tar ca-certificates \
+ && rm -rf /var/lib/apt/lists/* \
  && mkdir /tmp/bashio \
  && curl -J -L -o /tmp/bashio.tar.gz "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.tar.gz" \
  && tar zxf /tmp/bashio.tar.gz --strip 1 -C /tmp/bashio \
