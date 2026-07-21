@@ -85,6 +85,8 @@ ln -s "$CONFIG_PATH" /config
 ln -s "$INGEST_PATH" /cwa-book-ingest
 ln -s "$LIBRARY_PATH" /calibre-library
 
+echo "20-addon-options ... after ln"
+
 ls -la / 
 
 echo "[cont-init.d] Applied Home Assistant options for Calibre-Web Automated"
