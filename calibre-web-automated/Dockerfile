@@ -5,11 +5,12 @@ ARG BASHIO_VERSION="v0.18.1"
 FROM crocodilestick/calibre-web-automated:latest
 
 # --- bashio (installed from release, no base-image tag dependency) ---
-RUN apt-get update && apt-get install -y --no-install-recommends curl tar ca-certificates
+RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /tmp/bashio
-RUN curl -J -L -o /tmp/bashio.tar.gz "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.tar.gz"
-RUN tar zxvf /tmp/bashio.tar.gz -C /tmp/bashio
+RUN curl -J -L -o /tmp/bashio.zip "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.zip"
+RUN unzip /tmp/bashio.zip
+RUN ls -la /tmp
 RUN mv /tmp/bashio/lib /usr/lib/bashio
 RUN ln -s /usr/lib/bashio/bashio /usr/bin/bashio
 RUN rm -rf /tmp/bashio*
