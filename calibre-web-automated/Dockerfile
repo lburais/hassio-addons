@@ -7,6 +7,16 @@ FROM crocodilestick/calibre-web-automated:latest
 COPY root/ /
 RUN chmod -R +x /etc/cont-init.d
 
+RUN for d in /etc/s6-overlay/s6-rc.d/*/; do \
+      svc=$(basename "$d"); \
+      case "$svc" in base|fix-attrs|legacy-cont-init|legacy-services|s6rc-oneshot-runner) continue ;; esac; \
+      [ -f "$d/type" ] || continue; \
+      t=$(cat "$d/type"); \
+      if [ "$t" = "oneshot" ] || [ "$t" = "longrun" ]; then \
+        mkdir -p "$d/dependencies.d"; \
+        touch "$d/dependencies.d/base"; \
+      fi; \
+    done
 LABEL \
   io.hass.version="${BUILD_VERSION}" \
   io.hass.type="app" \
@@ -15,19 +25,3 @@ LABEL \
 ENV CWA_PORT_OVERRIDE=8083
 
 EXPOSE 8083/tcp
-
-# Force base services to wait for legacy cont-init.d (our 20-addon-options)
-RUN for svc in svc-calibre-web-automated cwa-ingest-service metadata-change-detector; do \
-      mkdir -p "/etc/s6-overlay/s6-rc.d/${svc}/dependencies.d" && \
-      touch "/etc/s6-overlay/s6-rc.d/${svc}/dependencies.d/legacy-cont-init"; \
-    done
-    
-# Bring in bashio for reading HA addon options
-# COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/bin/bashio /usr/bin/bashio
-# COPY --from=ghcr.io/hassio-addons/base:16.0.5 /usr/lib/bashio /usr/lib/bashio
-
-# COPY run.sh /
-# RUN chmod a+x /run.sh
-
-# ENTRYPOINT []
-# CMD [ "/run.sh" ]
