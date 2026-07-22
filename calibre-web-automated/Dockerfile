@@ -6,6 +6,8 @@ FROM crocodilestick/calibre-web-automated:latest
 COPY root/ /
 RUN chmod -R +x /etc/s6-overlay/s6-rc.d
 
+RUN apt-get update && apt-get install -y --no-install-recommends tree
+
 LABEL \
   io.hass.version="${BUILD_VERSION}" \
   io.hass.type="app" \
