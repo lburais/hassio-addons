@@ -48,15 +48,15 @@ done < /tmp/cwa-addon-env
 
 rm -f /tmp/cwa-addon-env
 
-CONFIG_PATH="${CONFIG_PATH:-/addon-config}"
+CONFIG_PATH="${CONFIG_PATH:-/share/calibre-web-automated/config}"
 INGEST_PATH="${INGEST_PATH:-/share/calibre-web-automated/ingest}"
-LIBRARY_PATH="${LIBRARY_PATH:-/media/calibre-web-automated/library}"
+LIBRARY_PATH="${LIBRARY_PATH:-/share/calibre-web-automated/library}"
 
 case "$CONFIG_PATH" in
     /addon-config|/addon-config/*|/share|/share/*|/media|/media/*) ;;
     *)
-        echo "[cont-init.d] Invalid CONFIG_PATH '$CONFIG_PATH'. Falling back to /addon-config"
-        CONFIG_PATH="/addon-config"
+        echo "[cont-init.d] Invalid CONFIG_PATH '$CONFIG_PATH'. Falling back to /share/calibre-web-automated/config"
+        CONFIG_PATH="/share/calibre-web-automated/config"
         ;;
 esac
 
@@ -71,8 +71,8 @@ esac
 case "$LIBRARY_PATH" in
     /media|/media/*|/share|/share/*) ;;
     *)
-        echo "[cont-init.d] Invalid LIBRARY_PATH '$LIBRARY_PATH'. Falling back to /media/calibre-web-automated/library"
-        LIBRARY_PATH="/media/calibre-web-automated/library"
+        echo "[cont-init.d] Invalid LIBRARY_PATH '$LIBRARY_PATH'. Falling back to /share/calibre-web-automated/library"
+        LIBRARY_PATH="/share/calibre-web-automated/library"
         ;;
 esac
 
