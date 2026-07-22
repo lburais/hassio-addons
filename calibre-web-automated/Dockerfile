@@ -1,6 +1,5 @@
 ARG BUILD_VERSION=dev
 ARG BUILD_ARCH
-ARG BASHIO_VERSION="0.18.1"
 
 FROM crocodilestick/calibre-web-automated:latest
 
