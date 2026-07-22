@@ -1,4 +1,7 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+echo "[cwa-options] Setting up CWA options..."
 
 set -euo pipefail
 
@@ -96,4 +99,4 @@ echo "20-addon-options ... after ln"
 
 ls -la / 
 
-echo "[cont-init.d] Applied Home Assistant options for Calibre-Web Automated"
+echo "[cwa-options] Applied Home Assistant options for Calibre-Web Automated"
