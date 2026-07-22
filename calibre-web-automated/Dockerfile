@@ -40,16 +40,16 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d \
  && touch /etc/s6-overlay/s6-rc.d/user/contents.d/addon-options
 
 # --- force every native service to wait for addon-options ---
-RUN for d in /etc/s6-overlay/s6-rc.d/*/; do \
-      svc=$(basename "$d"); \
-      case "$svc" in base|fix-attrs|legacy-cont-init|legacy-services|s6rc-oneshot-runner|addon-options|user|user2) continue ;; esac; \
-      [ -f "$d/type" ] || continue; \
-      t=$(cat "$d/type"); \
-      if [ "$t" = "oneshot" ] || [ "$t" = "longrun" ]; then \
-        mkdir -p "$d/dependencies.d"; \
-        touch "$d/dependencies.d/addon-options"; \
-      fi; \
-    done
+# RUN for d in /etc/s6-overlay/s6-rc.d/*/; do \
+#       svc=$(basename "$d"); \
+#       case "$svc" in base|fix-attrs|legacy-cont-init|legacy-services|s6rc-oneshot-runner|addon-options|user|user2) continue ;; esac; \
+#       [ -f "$d/type" ] || continue; \
+#       t=$(cat "$d/type"); \
+#       if [ "$t" = "oneshot" ] || [ "$t" = "longrun" ]; then \
+#         mkdir -p "$d/dependencies.d"; \
+#         touch "$d/dependencies.d/addon-options"; \
+#       fi; \
+#     done
 
 LABEL \
   io.hass.version="${BUILD_VERSION}" \
