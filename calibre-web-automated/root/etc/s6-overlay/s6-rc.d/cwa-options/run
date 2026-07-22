@@ -82,6 +82,9 @@ esac
 
 mkdir -p "$CONFIG_PATH" "$INGEST_PATH" "$LIBRARY_PATH"
 
+tree /share/Docker
+ls -la /share/Medias
+
 rm -rf /config /cwa-book-ingest /calibre-library
 
 ls -la / 
