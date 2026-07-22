@@ -4,6 +4,9 @@ ARG BASHIO_VERSION="0.18.1"
 
 FROM crocodilestick/calibre-web-automated:latest
 
+COPY root/ /
+RUN chmod -R +x /etc/cont-init.d
+
 # --- bashio (installed from release, no base-image tag dependency) ---
 # RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates \
 #  && rm -rf /var/lib/apt/lists/* \
