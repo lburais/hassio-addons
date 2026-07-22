@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-c
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /tmp/bashio
 RUN curl -J -L -o /tmp/bashio.zip "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.zip"
+RUN ls -la /tmp
 RUN unzip /tmp/bashio.zip
 RUN ls -la /tmp
 RUN mv /tmp/bashio/lib /usr/lib/bashio
