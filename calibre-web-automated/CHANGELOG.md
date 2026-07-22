@@ -1,21 +1,9 @@
 # Changelog
 
-## 1.1.0
-
-- Claude support for docker compose.
-
-## 1.0.3
-
-- Fixing folders.
-
-## 1.0.2
-
-- Fixing options not being used.
-
-## 1.0.1
-
-- Fixing options to use share folder.
-
 ## 1.0.0
+
+- Working Dockerfile with options for volumes mapping.
+
+## 0.0.1
 
 - Initial Calibre-Web Automated add-on release.

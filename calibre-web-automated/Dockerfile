@@ -5,26 +5,16 @@ ARG BASHIO_VERSION="0.18.1"
 FROM crocodilestick/calibre-web-automated:latest
 
 # --- bashio (installed from release, no base-image tag dependency) ---
-RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates
-RUN rm -rf /var/lib/apt/lists/*
-RUN mkdir /tmp/bashio
-RUN cd /tmp/bashio
-RUN curl -vsSL -o bashio.zip "https://github.com/hassio-addons/bashio/archive/v${BASHIO_VERSION}.zip"
-RUN curl -sSL -o bashio.zip "https://github.com/hassio-addons/bashio/archive/v0.18.1.zip"
-RUN unzip bashio.zip
-RUN mv bashio-0.18.1/lib /usr/lib/bashio
-RUN ln -s /usr/lib/bashio/bashio /usr/bin/bashio
-RUN cd ..
-RUN rm -rf /tmp/bashio*
-
-#  RUN apt-get update && apt-get install -y --no-install-recommends curl tar ca-certificates \
-#  && rm -rf /var/lib/apt/lists/* \
-#  && mkdir /tmp/bashio \
-#  && curl -J -L -o /tmp/bashio.tar.gz "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.tar.gz" \
-#  && tar zxf /tmp/bashio.tar.gz --strip 1 -C /tmp/bashio \
-#  && mv /tmp/bashio/lib /usr/lib/bashio \
-#  && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
-#  && rm -rf /tmp/bashio*
+RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates \
+ && rm -rf /var/lib/apt/lists/* \
+ && mkdir /tmp/bashio \
+ && cd /tmp/bashio \
+ && curl -sSL -o bashio.zip "https://github.com/hassio-addons/bashio/archive/v0.18.1.zip" \
+ && unzip bashio.zip \
+ && mv bashio-0.18.1/lib /usr/lib/bashio \
+ && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
+ && cd .. \
+ && rm -rf /tmp/bashio*
 
 # --- addon-options oneshot (replaces /etc/cont-init.d/20-addon-options) ---
 RUN mkdir -p /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d \

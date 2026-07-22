@@ -7,7 +7,6 @@
 ## About
 
 ---
-22JUL26 0853
 
 [Calibre-Web Automated](https://github.com/crocodilestick/Calibre-Web-Automated) is a Calibre-Web based ebook library manager with ingest, conversion, metadata, and automation features.
 
