@@ -1,6 +1,6 @@
 ARG BUILD_VERSION=dev
 ARG BUILD_ARCH
-ARG BASHIO_VERSION="v0.18.1"
+ARG BASHIO_VERSION="0.18.1"
 
 FROM crocodilestick/calibre-web-automated:latest
 
@@ -8,10 +8,12 @@ FROM crocodilestick/calibre-web-automated:latest
 RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /tmp/bashio
-RUN curl -J -L -o /tmp/bashio/bashio.zip "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.zip"
-RUN unzip /tmp/bashio/bashio.zip
-RUN mv /tmp/bashio/lib /usr/lib/bashio
+RUN cd /tmp/bashio
+RUN curl -J -L -o bashio.zip "https://github.com/hassio-addons/bashio/archive/v${BASHIO_VERSION}.zip"
+RUN unzip bashio.zip
+RUN mv bashio-${BASHIO_VERSION}/lib /usr/lib/bashio
 RUN ln -s /usr/lib/bashio/bashio /usr/bin/bashio
+RUN cd ..
 RUN rm -rf /tmp/bashio*
 
 #  RUN apt-get update && apt-get install -y --no-install-recommends curl tar ca-certificates \
