@@ -22,6 +22,7 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d \
  && touch /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d/base \
  && cat > /etc/s6-overlay/s6-rc.d/addon-options/up << 'EOF'
 #!/usr/bin/with-contenv bashio
+echo $(which bashio)
 PUID=$(bashio::config 'PUID')
 PGID=$(bashio::config 'PGID')
 TZ=$(bashio::config 'TZ')
