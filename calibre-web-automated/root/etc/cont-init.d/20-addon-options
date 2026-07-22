@@ -3,6 +3,7 @@
 set -euo pipefail
 
 echo "20-addon-options ..."
+ls -la /
 
 CONFIG_PATH=/data/options.json
 ENV_DIR=/var/run/s6/container_environment
@@ -48,6 +49,7 @@ done < /tmp/cwa-addon-env
 
 rm -f /tmp/cwa-addon-env
 
+echo $(env)
 echo "20-addon-options ... after while"
 
 CONFIG_PATH="${CONFIG_PATH:-/addon-config}"
@@ -77,6 +79,8 @@ case "$LIBRARY_PATH" in
         LIBRARY_PATH="/media/calibre-web-automated/library"
         ;;
 esac
+
+echo "20-addon-options ... before mkdir"
 
 mkdir -p "$CONFIG_PATH" "$INGEST_PATH" "$LIBRARY_PATH"
 
