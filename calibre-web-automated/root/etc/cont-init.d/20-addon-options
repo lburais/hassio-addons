@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+echo "20-addon-options skip"
+exit
+
 echo "20-addon-options ..."
 
 CONFIG_PATH=/data/options.json
