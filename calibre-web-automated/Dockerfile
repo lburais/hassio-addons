@@ -5,40 +5,40 @@ ARG BASHIO_VERSION="0.18.1"
 FROM crocodilestick/calibre-web-automated:latest
 
 # --- bashio (installed from release, no base-image tag dependency) ---
-RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates \
- && rm -rf /var/lib/apt/lists/* \
- && mkdir /tmp/bashio \
- && cd /tmp/bashio \
- && curl -sSL -o bashio.zip "https://github.com/hassio-addons/bashio/archive/v0.18.1.zip" \
- && unzip bashio.zip \
- && mv bashio-0.18.1/lib /usr/lib/bashio \
- && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
- && cd .. \
- && rm -rf /tmp/bashio*
+# RUN apt-get update && apt-get install -y --no-install-recommends curl unzip ca-certificates \
+#  && rm -rf /var/lib/apt/lists/* \
+#  && mkdir /tmp/bashio \
+#  && cd /tmp/bashio \
+#  && curl -sSL -o bashio.zip "https://github.com/hassio-addons/bashio/archive/v0.18.1.zip" \
+#  && unzip bashio.zip \
+#  && mv bashio-0.18.1/lib /usr/lib/bashio \
+#  && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
+#  && cd .. \
+#  && rm -rf /tmp/bashio*
 
 # --- addon-options oneshot (replaces /etc/cont-init.d/20-addon-options) ---
-RUN mkdir -p /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d \
- && echo "oneshot" > /etc/s6-overlay/s6-rc.d/addon-options/type \
- && touch /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d/base \
- && cat > /etc/s6-overlay/s6-rc.d/addon-options/up << 'EOF'
-#!/usr/bin/with-contenv bashio
-echo $(which bashio)
-PUID=$(bashio::config 'PUID')
-PGID=$(bashio::config 'PGID')
-TZ=$(bashio::config 'TZ')
-CONFIG_PATH=$(bashio::config 'CONFIG_PATH')
-INGEST_PATH=$(bashio::config 'INGEST_PATH')
-LIBRARY_PATH=$(bashio::config 'LIBRARY_PATH')
+# RUN mkdir -p /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d \
+#  && echo "oneshot" > /etc/s6-overlay/s6-rc.d/addon-options/type \
+#  && touch /etc/s6-overlay/s6-rc.d/addon-options/dependencies.d/base \
+#  && cat > /etc/s6-overlay/s6-rc.d/addon-options/up << 'EOF'
+# #!/usr/bin/with-contenv bashio
+# echo $(which bashio)
+# PUID=$(bashio::config 'PUID')
+# PGID=$(bashio::config 'PGID')
+# TZ=$(bashio::config 'TZ')
+# CONFIG_PATH=$(bashio::config 'CONFIG_PATH')
+# INGEST_PATH=$(bashio::config 'INGEST_PATH')
+# LIBRARY_PATH=$(bashio::config 'LIBRARY_PATH')
 
-for v in PUID PGID TZ CONFIG_PATH INGEST_PATH LIBRARY_PATH; do
-  printf '%s' "${!v}" > /run/s6/container_environment/"$v"
-done
-EOF
-RUN chmod +x /etc/s6-overlay/s6-rc.d/addon-options/up
+# for v in PUID PGID TZ CONFIG_PATH INGEST_PATH LIBRARY_PATH; do
+#   printf '%s' "${!v}" > /run/s6/container_environment/"$v"
+# done
+# EOF
+# RUN chmod +x /etc/s6-overlay/s6-rc.d/addon-options/up
 
 # --- register it in the boot bundle ---
-RUN mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d \
- && touch /etc/s6-overlay/s6-rc.d/user/contents.d/addon-options
+# RUN mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d \
+#  && touch /etc/s6-overlay/s6-rc.d/user/contents.d/addon-options
 
 # --- force every native service to wait for addon-options ---
 # RUN for d in /etc/s6-overlay/s6-rc.d/*/; do \

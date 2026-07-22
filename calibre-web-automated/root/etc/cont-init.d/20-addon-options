@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-echo "20-addon-options skip"
-exit
-
 echo "20-addon-options ..."
 
 CONFIG_PATH=/data/options.json
@@ -84,6 +81,9 @@ esac
 mkdir -p "$CONFIG_PATH" "$INGEST_PATH" "$LIBRARY_PATH"
 
 rm -rf /config /cwa-book-ingest /calibre-library
+
+echo "20-addon-options ... ready for ln"
+
 ln -s "$CONFIG_PATH" /config
 ln -s "$INGEST_PATH" /cwa-book-ingest
 ln -s "$LIBRARY_PATH" /calibre-library
