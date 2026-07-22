@@ -5,7 +5,6 @@ echo "[cwa-options] Setting up CWA options..."
 
 set -euo pipefail
 
-echo "20-addon-options ..."
 ls -la /
 
 CONFIG_PATH=/data/options.json
@@ -42,7 +41,6 @@ for key, default in defaults.items():
     print(f'{key}={value}')
 PY
 
-echo "20-addon-options ... after python"
 cat /tmp/cwa-addon-env
 
 while IFS='=' read -r key value; do
@@ -53,7 +51,6 @@ done < /tmp/cwa-addon-env
 rm -f /tmp/cwa-addon-env
 
 echo $(env)
-echo "20-addon-options ... after while"
 
 CONFIG_PATH="${CONFIG_PATH:-/addon-config}"
 INGEST_PATH="${INGEST_PATH:-/share/calibre-web-automated/ingest}"
@@ -83,19 +80,13 @@ case "$LIBRARY_PATH" in
         ;;
 esac
 
-echo "20-addon-options ... before mkdir"
-
 mkdir -p "$CONFIG_PATH" "$INGEST_PATH" "$LIBRARY_PATH"
 
-rm -rf /config /cwa-book-ingest /calibre-library
-
-echo "20-addon-options ... ready for ln"
+# rm -rf /config /cwa-book-ingest /calibre-library
 
 ln -s "$CONFIG_PATH" /config
 ln -s "$INGEST_PATH" /cwa-book-ingest
 ln -s "$LIBRARY_PATH" /calibre-library
-
-echo "20-addon-options ... after ln"
 
 ls -la / 
 
