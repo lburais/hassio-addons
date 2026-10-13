@@ -10,6 +10,8 @@ LABEL \
 
 USER root
 
+ENV PYTHONUSERBASE=/home/meshcore/.local
+
 COPY run.sh /run.sh
 COPY config.ini.minimal-example /config.ini.minimal-example
 RUN chmod +x /run.sh
