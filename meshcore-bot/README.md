@@ -16,3 +16,5 @@ Runs [meshcore-bot](https://github.com/agessaman/meshcore-bot) (image `ghcr.io/a
 
 - Config: add-on config folder (mounted as `/data/config`)
 - Databases, logs, backups: add-on `/data`
+
+Note: config.ini in /root/addon_configs/*_meshcore-bot
