@@ -1,0 +1,8 @@
+{
+    "last_update": "13-10-2026",
+    "repository": "lburais/hassio-addons",
+    "slug": "meshcore-bot",
+    "source": "github",
+    "upstream_repo": "agessaman/meshcore-bot",
+    "upstream_version": "latest"
+}

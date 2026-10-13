@@ -48,6 +48,14 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![armv7][armv7no-badge]
 
+&#10003; [MeshCore Bot](meshcore-bot/): MeshCore mesh radio bot based on [agessaman/meshcore-bot](https://github.com/agessaman/meshcore-bot)
+
+&emsp;&emsp; ![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flburais%2Fhassio-addons%2Fmaster%2Fmeshcore-bot%2Fconfig.json)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Flburais%2Fhassio-addons%2Fmaster%2Fmeshcore-bot%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+![armv7][armv7no-badge]
+
 ## Support
 
 Got questions?
