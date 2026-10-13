@@ -1,7 +1,7 @@
 {
   "name": "MeshCore Bot",
   "slug": "meshcore-bot",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MeshCore bot for mesh radio networks",
   "url": "https://github.com/lburais/hassio-addons/tree/master/meshcore-bot",
   "arch": [
@@ -28,7 +28,7 @@
   "options": {
     "timezone": "Europe/Paris",
     "connection_type": "serial",
-    "serial_port": "/dev/ttyUSB0",
+    "serial_port": "/dev/ttyAMA0",
     "bot_name": "FR06-Laurent-C6L-Bot"
   },
   "schema": {

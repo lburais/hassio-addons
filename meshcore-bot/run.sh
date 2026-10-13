@@ -41,5 +41,8 @@ if opts.get('timezone'):
 PY
 )"
 
+echo "Serial devices available in the add-on:"
+ls -l /dev/tty* /dev/serial/by-id/* 2>/dev/null | grep -E "ttyUSB|ttyACM|ttyAMA|by-id" || echo "  none found"
+
 cd /app
 exec python3 meshcore_bot.py --config /data/config/config.ini

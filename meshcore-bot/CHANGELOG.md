@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4
+
+- USB tracing.
+
 ## 1.0.3
 
 - Working release.
