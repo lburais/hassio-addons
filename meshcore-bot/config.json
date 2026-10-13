@@ -1,10 +1,14 @@
 {
   "name": "MeshCore Bot",
   "slug": "meshcore-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MeshCore bot for mesh radio networks",
   "url": "https://github.com/lburais/hassio-addons/tree/master/meshcore-bot",
-  "arch": ["aarch64", "amd64", "armv7"],
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7"
+  ],
   "startup": "application",
   "boot": "auto",
   "init": false,
@@ -12,7 +16,9 @@
   "host_network": false,
   "uart": true,
   "usb": true,
-  "map": ["addon_config:rw"],
+  "map": [
+    "addon_config:rw"
+  ],
   "ports": {
     "8080/tcp": 8080
   },
@@ -20,9 +26,20 @@
     "8080/tcp": "Web viewer (if enabled in config.ini)"
   },
   "options": {
-    "timezone": "Europe/Paris"
+    "timezone": "Europe/Paris",
+    "connection_type": "serial",
+    "serial_port": "/dev/ttyUSB0",
+    "bot_name": "FR06-Laurent-C6L-Bot"
   },
   "schema": {
-    "timezone": "str"
-  }
+    "timezone": "str",
+    "connection_type": "list(serial|ble|tcp)",
+    "serial_port": "str",
+    "bot_name": "str"
+  },
+  "ingress": true,
+  "ingress_port": 8080,
+  "panel_icon": "mdi:radio-tower",
+  "panel_title": "MeshCore Bot",
+  "webui": "http://[HOST]:[PORT:8080]"
 }
