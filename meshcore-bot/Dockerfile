@@ -13,7 +13,7 @@ USER root
 ENV PYTHONUSERBASE=/home/meshcore/.local
 
 COPY run.sh /run.sh
-COPY config.ini.minimal-example /config.ini.minimal-example
+COPY config/config.ini /config.ini.default
 RUN chmod +x /run.sh
 
 ENTRYPOINT []

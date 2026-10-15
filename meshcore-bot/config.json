@@ -1,7 +1,7 @@
 {
   "name": "MeshCore Bot",
   "slug": "meshcore-bot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "MeshCore bot for mesh radio networks",
   "url": "https://github.com/lburais/hassio-addons/tree/master/meshcore-bot",
   "arch": [
@@ -20,26 +20,14 @@
     "addon_config:rw"
   ],
   "ports": {
-    "8080/tcp": 8080
+    "7777/tcp": 7777
   },
   "ports_description": {
-    "8080/tcp": "Web viewer (if enabled in config.ini)"
-  },
-  "options": {
-    "timezone": "Europe/Paris",
-    "connection_type": "serial",
-    "serial_port": "/dev/ttyAMA0",
-    "bot_name": "FR06-Laurent-C6L-Bot"
-  },
-  "schema": {
-    "timezone": "str",
-    "connection_type": "list(serial|ble|tcp)",
-    "serial_port": "str",
-    "bot_name": "str"
+    "7777/tcp": "Web viewer (if enabled in config.ini)"
   },
   "ingress": true,
-  "ingress_port": 8080,
+  "ingress_port": 7777,
   "panel_icon": "mdi:radio-tower",
   "panel_title": "MeshCore Bot",
-  "webui": "http://[HOST]:[PORT:8080]"
+  "webui": "http://[HOST]:[PORT:7777]"
 }

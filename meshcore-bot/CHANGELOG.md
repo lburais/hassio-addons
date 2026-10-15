@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5
+
+- Default to config.ini.
+- Port 7777
+
 ## 1.0.4
 
 - USB tracing.
