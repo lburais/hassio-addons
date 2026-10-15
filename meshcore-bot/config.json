@@ -1,7 +1,7 @@
 {
   "name": "MeshCore Bot",
   "slug": "meshcore-bot",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "MeshCore bot for mesh radio networks",
   "url": "https://github.com/lburais/hassio-addons/tree/master/meshcore-bot",
   "arch": [

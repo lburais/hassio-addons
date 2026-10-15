@@ -7,8 +7,8 @@ rm -rf /data/config
 ln -s /config /data/config
 
 if [ ! -f /config/config.ini ]; then
-  echo "No config.ini found, creating one from the default config. Edit it in the add-on config folder."
-  cp /config.ini.default /config/config.ini
+  echo "No config.ini found, creating one from the minimal example. Edit it in the add-on config folder."
+  cp /config.ini /config/config.ini
 fi
 
 cd /app

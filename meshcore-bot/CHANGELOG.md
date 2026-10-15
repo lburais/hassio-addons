@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6
+
+- Fix config.ini.
+
 ## 1.0.5
 
 - Default to config.ini.
